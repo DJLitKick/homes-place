@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME'S PLACE — Private Event Production</title>
+  <meta name="description" content="Home's Place brings five-star event production to your private home — cuisine, cocktails, DJ, event technics, and every detail the discerning host desires." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── LOADER ── -->
+  <div id="loader">
+    <div class="loader-brand">HOME'S PLACE</div>
+    <div class="loader-bar-wrap">
+      <div id="loader-bar"></div>
+    </div>
+    <div id="loader-percent">0%</div>
+  </div>
+
+  <!-- ── FIXED HEADER ── -->
+  <header class="site-header">
+    <a class="site-logo" href="#">HOME'S PLACE</a>
+    <nav class="site-nav">
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ── CANVAS (fixed, fullscreen) ── -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- ── DARK OVERLAY ── -->
+  <div id="dark-overlay"></div>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-wrap" id="marquee" data-scroll-speed="-28">
+    <p class="marquee-text">PRIVATE EVENTS AT HOME &nbsp;·&nbsp; CUISINE &nbsp;·&nbsp; BAR &nbsp;·&nbsp; DJ &amp; SOUND &nbsp;·&nbsp; HOME'S PLACE &nbsp;·&nbsp; PRIVATE EVENTS AT HOME &nbsp;·&nbsp; CUISINE &nbsp;·&nbsp; BAR &nbsp;·&nbsp; DJ &amp; SOUND &nbsp;·&nbsp; HOME'S PLACE &nbsp;·&nbsp;</p>
+  </div>
+
+  <!-- ── SCROLL CONTAINER ── -->
+  <div id="scroll-container">
+
+    <!-- HERO · Brand & intro -->
+    <section id="hero" class="scroll-section section-hero"
+             data-enter="0" data-leave="10" data-animation="none">
+      <div class="hero-inner">
+        <span class="section-label hero-label">PRIVATE EVENT PRODUCTION</span>
+        <h1 class="hero-heading">
+          <span class="word">HOME'S</span>&nbsp;<span class="word accent">PLACE</span>
+        </h1>
+        <p class="hero-tagline">Your home. Our finest work.</p>
+        <p class="hero-description">Cuisine &nbsp;·&nbsp; Bar &nbsp;·&nbsp; DJ &nbsp;·&nbsp; Event Technics &nbsp;·&nbsp; Vendors &nbsp;·&nbsp; Everything</p>
+        <div class="scroll-indicator">
+          <span class="scroll-line"></span>
+          <span class="scroll-text">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 · DJ & Technic -->
+    <section class="scroll-section section-content align-right"
+             data-enter="23" data-leave="33" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">001 &nbsp;/&nbsp; DJ &amp; Technic</span>
+        <h2 class="section-heading">Sound &amp; Stage,<br>Perfected</h2>
+        <p class="section-body">Handpicked DJs who read the room, paired with professional sound systems, lighting rigs and stage setup — all installed and managed by our team so the vibe is exactly right from first track to last.</p>
+        <span class="section-note">DJ booking &amp; full technical production</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2 · Cuisine Catering -->
+    <section class="scroll-section section-content align-left"
+             data-enter="36" data-leave="46" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">002 &nbsp;/&nbsp; Cuisine</span>
+        <h2 class="section-heading">Restaurant-Grade<br>Cuisine</h2>
+        <p class="section-body">We bring Michelin-calibre cooking directly to your home. Hand-selected produce, bespoke menus crafted around your occasion, and front-of-house service that makes every guest feel like the only one.</p>
+        <span class="section-note">Private dining &amp; custom menus</span>
+      </div>
+    </section>
+
+    <!-- SECTION 3 · Bar & Sound -->
+    <section class="scroll-section section-content align-right"
+             data-enter="49" data-leave="59" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">003 &nbsp;/&nbsp; Bar &amp; Sound</span>
+        <h2 class="section-heading">Cocktails &amp;<br>the Perfect Set</h2>
+        <p class="section-body">A curated open bar with craft cocktails mixed by our specialists — paired with handpicked DJs who read the room and keep the energy exactly where you want it, all night long.</p>
+        <span class="section-note">Full bar service &amp; DJ booking</span>
+      </div>
+    </section>
+
+    <!-- SECTION 4 · Production & Vendors -->
+    <section class="scroll-section section-content align-left"
+             data-enter="62" data-leave="72" data-animation="rotate-in">
+      <div class="section-inner">
+        <span class="section-label">004 &nbsp;/&nbsp; Production</span>
+        <h2 class="section-heading">Every Detail,<br>Arranged</h2>
+        <p class="section-body">Lighting rigs, sound systems, florists, photographers, décor — we coordinate every vendor so you don't have to. One call to Home's Place sets everything in motion.</p>
+        <span class="section-note">Technics &amp; vendor coordination</span>
+      </div>
+    </section>
+
+    <!-- SECTION 5 · Stats -->
+    <section class="scroll-section section-stats"
+             data-enter="75" data-leave="85" data-animation="stagger-up">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-number" data-value="300" data-decimals="0">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Private Events</span>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-number" data-value="98" data-decimals="0">0</span>
+            <span class="stat-suffix">%</span>
+          </div>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-number" data-value="8" data-decimals="0">0</span>
+            <span class="stat-suffix">yrs</span>
+          </div>
+          <span class="stat-label">Premium Excellence</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 · CTA (persists) -->
+    <section class="scroll-section section-cta"
+             data-enter="97" data-leave="100" data-animation="clip-reveal" data-persist="true">
+      <div class="section-inner cta-inner">
+        <span class="section-label">005 &nbsp;/&nbsp; Begin</span>
+        <h2 class="section-heading cta-heading">Plan Your<br><em>Evening</em></h2>
+        <p class="section-body">Tell us your vision — we handle everything from first glass to final note. Your home, unforgettable.</p>
+        <a href="mailto:contact@homesplace.com" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <!-- HOTSPOT PINS · fixed to viewport, opacity driven by scroll progress -->
+  <section class="scroll-section section-hotspot"
+           data-enter="87" data-leave="97" data-animation="none" data-fixed="true">
+    <a href="#" class="hotspot-item" style="left:22%;top:11%;">
+      <div class="hotspot-text">
+        <span class="hotspot-label">Technic &amp; DJ</span>
+        <span class="hotspot-sublabel">Stage &amp; Sound</span>
+      </div>
+      <span class="hotspot-line"></span>
+      <span class="hotspot-dot"></span>
+    </a>
+    <a href="#" class="hotspot-item" style="left:48%;top:30%;">
+      <div class="hotspot-text">
+        <span class="hotspot-label">Food Catering</span>
+        <span class="hotspot-sublabel">Cuisine &amp; Buffet</span>
+      </div>
+      <span class="hotspot-line"></span>
+      <span class="hotspot-dot"></span>
+    </a>
+    <a href="#" class="hotspot-item" style="left:76%;top:19%;">
+      <div class="hotspot-text">
+        <span class="hotspot-label">Bar Catering</span>
+        <span class="hotspot-sublabel">Cocktails &amp; Bar</span>
+      </div>
+      <span class="hotspot-line"></span>
+      <span class="hotspot-dot"></span>
+    </a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
