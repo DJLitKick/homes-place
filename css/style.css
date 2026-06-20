@@ -573,7 +573,7 @@ canvas {
 
 @media (max-width: 768px) {
   #scroll-container {
-    height: 600vh;
+    height: 700vh;
   }
 
   .align-left,
@@ -585,13 +585,6 @@ canvas {
   .align-left .section-inner,
   .align-right .section-inner {
     max-width: 100%;
-  }
-
-  /* Semi-transparent dark backdrop so text reads over video */
-  .scroll-section.section-content {
-    background: rgba(10, 9, 8, 0.75);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
   }
 
   /* Reduce padding inside content cards */

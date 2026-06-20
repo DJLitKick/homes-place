@@ -10,7 +10,7 @@
   const FRAME_COUNT   = 251;
   const FRAME_EXT     = "webp";
   const FRAME_DIR     = "frames";
-  const IMAGE_SCALE   = 0.88;   /* padded-cover scale — shows thin bg border */
+  const IMAGE_SCALE   = window.innerWidth <= 768 ? 1.0 : 0.88; /* full-cover on mobile, padded on desktop */
   const FRAME_SPEED   = 1.1;    /* video runs 10% faster than scroll — frames lead sections */
   const SCROLL_HEIGHT = 700;    /* must match CSS height: 700vh */
   const FIRST_BATCH   = 12;     /* frames to load before revealing page */
@@ -165,8 +165,7 @@
 
   function initLenis() {
     if (isTouchDevice) {
-      /* On touch devices, native scroll drives ScrollTrigger — no Lenis needed */
-      ScrollTrigger.normalizeScroll(true);
+      /* On touch devices, native scroll drives ScrollTrigger directly — no Lenis needed */
       return;
     }
     const lenis = new Lenis({
