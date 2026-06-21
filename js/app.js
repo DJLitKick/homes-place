@@ -79,7 +79,7 @@
     const dw = iw * scale;
     const dh = ih * scale;
     const overflow = Math.max(0, dw - cw);
-    const dx = -overflow * canvasPanX;
+    const dx = overflow > 0 ? -overflow * canvasPanX : (cw - dw) / 2;
     const dy = (ch - dh) / 2;
 
     ctx.fillStyle = bgColor;
