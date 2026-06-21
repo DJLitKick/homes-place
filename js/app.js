@@ -34,6 +34,7 @@
   let currentFrame = 0;
   let bgColor    = "#0d0c0b";
   let dpr        = Math.min(window.devicePixelRatio || 1, 2);
+  let canvasPanX = 0.5; /* 0 = left edge · 0.5 = center · 1 = right edge */
 
   /* ────────────────────────────────────────
      1 · CANVAS RESIZE
@@ -77,7 +78,8 @@
     const scale = Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
     const dw = iw * scale;
     const dh = ih * scale;
-    const dx = (cw - dw) / 2;
+    const overflow = Math.max(0, dw - cw);
+    const dx = -overflow * canvasPanX;
     const dy = (ch - dh) / 2;
 
     ctx.fillStyle = bgColor;
@@ -441,6 +443,48 @@
   }
 
   /* ────────────────────────────────────────
+     11 · MOBILE CANVAS PAN
+     Pans the background left/right on touch
+     devices to show the relevant part of the
+     landscape video for each section.
+  ──────────────────────────────────────── */
+  function initMobilePan() {
+    if (!isTouchDevice && window.innerWidth > 768) return;
+
+    ScrollTrigger.create({
+      trigger: scrollCont,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        const p = self.progress;
+        let target;
+
+        if (p < 0.20) {
+          target = 0.5;                                         // hero: center
+        } else if (p < 0.23) {
+          target = 0.5 - 0.5 * ((p - 0.20) / 0.03);           // glide → left
+        } else if (p < 0.36) {
+          target = 0;                                           // section 1 (DJ): left
+        } else if (p < 0.46) {
+          target = (p - 0.36) / 0.10;                          // section 2 (Cuisine): left → right
+        } else if (p < 0.59) {
+          target = 1;                                           // section 3 (Bar): right
+        } else if (p < 0.62) {
+          target = 1 - 0.5 * ((p - 0.59) / 0.03);             // glide → center
+        } else {
+          target = 0.5;                                         // section 4+ : center
+        }
+
+        if (target !== canvasPanX) {
+          canvasPanX = target;
+          requestAnimationFrame(() => drawFrame(currentFrame));
+        }
+      }
+    });
+  }
+
+  /* ────────────────────────────────────────
      INIT
   ──────────────────────────────────────── */
   function init() {
@@ -449,6 +493,7 @@
     positionSections();
     initLenis();
     initFrameBinding();
+    initMobilePan();
     initSectionAnimations();
     initDarkOverlay();
     initCounters();

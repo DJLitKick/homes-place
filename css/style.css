@@ -33,6 +33,17 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── HERO SCRIM ───────────────────────── */
+
+#hero-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  background: radial-gradient(ellipse 75% 60% at 50% 50%,
+    rgba(0,0,0,0.55) 0%, transparent 100%);
+  pointer-events: none;
+}
+
 /* ─── LOADER ───────────────────────────── */
 
 #loader {
@@ -98,6 +109,7 @@ body {
   justify-content: space-between;
   padding: 2rem 4vw;
   mix-blend-mode: normal;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, transparent 100%);
 }
 
 .site-logo {
@@ -162,7 +174,7 @@ body {
 
 .hero-label {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.3em;
   color: var(--accent-muted);
@@ -194,7 +206,7 @@ body {
 
 .hero-tagline {
   font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 300;
   letter-spacing: 0.12em;
   color: var(--text-light);
@@ -204,7 +216,7 @@ body {
 
 .hero-description {
   font-family: var(--font-body);
-  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  font-size: clamp(0.8rem, 1.2vw, 1.05rem);
   font-weight: 300;
   letter-spacing: 0.18em;
   color: var(--accent-muted);
@@ -637,9 +649,32 @@ canvas {
     max-width: 90vw !important;
   }
 
-  /* Hotspot pins designed for desktop layout — hide on mobile */
+  /* Hotspot section: replace desktop pin overlay with stacked card list on mobile */
   .section-hotspot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 6vw;
+  }
+
+  .hotspot-item {
+    position: static !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 32ch;
+  }
+
+  .hotspot-line,
+  .hotspot-dot {
     display: none;
+  }
+
+  .hotspot-text {
+    flex: 1;
   }
 }
 
